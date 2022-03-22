@@ -144,7 +144,7 @@
 			margin: 0px auto 0px auto;
 
 		}
-
+		
 		@-webkit-keyframes myfirst
 
 		/* Safari and Chrome */
@@ -173,13 +173,18 @@
 			font-size: 26px;
 			font-weight: bold;
 		}
+		.c{
+			display: flex;
+			margin-left: 30px;
+		
+}
 	</style>
 </head>
 
 <body onload="inshcool()" style="background: #fff">
 	<div class="infoBox">
 		<div class="title" style="text-align: center;">
-			<font class="typeTxt">入</font>校凭证
+			<font class="typeTxt">出</font>校凭证
 		</div>
 		<div class="content">
 			<p style="text-indent: 2em;">
@@ -187,8 +192,12 @@
 				同学可于
 				<span id="startTime" style="font-weight: bold;"></span>
 
-				<font class="typeTxt">入</font>校。
+				<font class="typeTxt">出</font>校。
 			</p>
+		</div>
+		<div class="content">
+          <p style="text-indent: 2em;">
+		    注：必须在<span id="inSchoolEndTime" style="font-weight: bold;"></span>前返校
 		</div>
 		<div style="overflow: hidden;margin-top: 50px;">
 
@@ -198,7 +207,9 @@
 			<div id="checkCode"></div>
 			<div id="timeBox" class="timeBox"></div>
 			<div id="tipBox"></div>
+			
 		</div>
+		
 	</div>
 </body>
 <script src="https://ygj.gduf.edu.cn/leavehelper_20220228/js/mui.min.js"></script>
@@ -241,12 +252,12 @@
 			now = now + 1000;
 			$("#timeBox").html(new Date(now).Format("yyyy-MM-dd hh:mm:ss"));
 			var s = endTime - now;
-			$("#remainingTime").html("该凭证<b>" + formatDuring(s) + "</b>后将失效，请尽快入校")
+			$("#remainingTime").html("该凭证<b>" + formatDuring(s) + "</b>后将失效，请尽快出校")
 		}, 1000);
 		$("#startTime").html(new Date().Format("yyyy-MM-dd"));// 出校
 		$("#inSchoolEndTime").html(new Date(new Date().getTime() + 14400000).Format("yyyy-MM-dd hh:mm:ss"));//必须进校
 		$("#studentName").html(getParam()['studentName'] + "（" + getParam()['studentId'] + "）");
-		$("#typeBox").html("入");
+		$("#typeBox").html("出");
 		$("#typeBox").css("animation", dateColorArr[new Date().getDay()] + " 0.6s infinite");
 		$("#typeBox").css("-webkit-animation", dateColorArr[new Date().getDay()] + " 0.6s infinite");
 	}
@@ -260,6 +271,7 @@
 		seconds = seconds < 10 ? "0" + seconds : seconds;
 		return hours + ":" + minutes + ":" + seconds;
 	}
+	
 </script>
 
 </html>
