@@ -3,12 +3,14 @@
 <html>
 
 <head>
+   
 	<meta charset="UTF-8">
 	<title>出入凭证</title>
 	<meta name="theme-color" content="#6DB0FA">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 	<meta name="format-detection" content="telephone=no" />
+   
 	<style>
 		.infoBox {
 			padding: 0 5px;
@@ -16,7 +18,6 @@
 			font-size: 16px;
 			color: #333;
 		}
-div#typeBox {}
 
 		.title {
 			font-weight: bold;
@@ -75,7 +76,7 @@ div#typeBox {}
 
 		@keyframes kf-greenyellow {
 			from {
-				color: #548706;
+				color: green;
 			}
 
 			to {
@@ -133,18 +134,10 @@ div#typeBox {}
 			}
 		}
 
-		#typeBox {
+		#typeBox {font-size: 100px;font-weight: 600;color: #000;width: 160px;line-height: normal;text-align: center;display: block;margin: 0px auto 0px auto;}
 
-			font-size: 100px;
-			font-weight: bold;
-			color: #000;
-			width: 160px;
-			line-height: normal;
-			text-align: center;
-			display: block;
-			margin: 0px auto 0px auto;
-
-		}
+div#typeBox {
+    font-family: Malgun Gothic, sans-serif;}
 		
 		@-webkit-keyframes myfirst
 
@@ -221,7 +214,7 @@ div#typeBox {}
 	var now = 0;
 	var nowT;
 	var endTime = new Date().getTime() + 300000;
-	var dateColorArr = ['kf-green', 'kf-black', 'kf-blueviolet', 'kf-green', 'kf-cyan', 'kf-blue', 'kf-purple'];
+	var dateColorArr = ['kf-greenyellow', 'kf-black', 'kf-blueviolet', 'kf-green', 'kf-cyan', 'kf-blue', 'kf-purple'];
 
 	function getParam() {
 		var url = location.search; //获取url中"?"符后的字串
